@@ -1,0 +1,89 @@
+name: Visual Regression Testing
+
+on:
+  pull_request:
+    branches: [develop, main]
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [design/**]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        browser: [chromium, firefox, webkit]
+        viewport: [desktop, tablet, mobile]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Start static server
+        run: npx serve . -l 3000 &
+        env:
+          PORT: 3000
+
+      - name: Wait for server
+        run: sleep 3
+
+      - name: Run visual regression tests
+        run: |
+          npx playwright test --project=${{ matrix.browser }}-${{ matrix.viewport }}
+        env:
+          BASE_URL: http://localhost:3000
+
+      - name: Upload diff artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-diffs-${{ matrix.browser }}-${{ matrix.viewport }}
+          path: test-results/**/*.png
+          retention-days: 30
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const artifacts = await glob('test-results/**/*.diff.png');
+            let body = `## Visual Regression Results (${{ matrix.browser }}/${{ matrix.viewport }})\n\n`;
+            if (artifacts.length === 0) {
+              body += '✅ All tests passed — no visual regressions detected.';
+            } else {
+              body += `❌ **${artifacts.length} visual regression(s) detected**\n\n`;
+              for (const artifact of artifacts) {
+                body += `- ${artifact}\n`;
+              }
+              body += '\nDownload artifacts from the workflow run for diff images.';
+            }
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body
+            });
+
+concurrency:
+  group: visual-regression-${{ github.ref }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true

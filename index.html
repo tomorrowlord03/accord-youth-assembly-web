@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'none';">
+  <title>Accord Youth Assembly 2026 | NANKU Live in Raipur</title>
+
+  <!-- High-priority preload for Nanku Hero image to eliminate LCP delay -->
+  <link rel="preload" as="image" href="assets/nanku.jpeg" fetchpriority="high">
+
+  <!-- Google Fonts per DESIGN.md Section 16.2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Marquee -->
+  <div class="top-marquee" aria-label="Announcement Ticker">
+    <div class="marquee-content">
+      ★ FOR THE FIRST TIME IN CHHATTISGARH ★ NOV 21-22, 2026 ★ NANKU LIVE @ ACCORD YOUTH ASSEMBLY ★ 60+ REGISTRATIONS COMPLETED ✨ ★ PHASE 1 PASSES NOW LIVE ★ RAIPUR MUNICIPAL CORPORATION COLLABORATION ★ 
+      ★ FOR THE FIRST TIME IN CHHATTISGARH ★ NOV 21-22, 2026 ★ NANKU LIVE @ ACCORD YOUTH ASSEMBLY ★ 60+ REGISTRATIONS COMPLETED ✨ ★ PHASE 1 PASSES NOW LIVE ★
+    </div>
+  </div>
+
+  <!-- 10.4 Sticky Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo-link">
+        <span class="logo-text">ACCORD YOUTH ASSEMBLY</span>
+        <span class="logo-badge">2026</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#committees" class="nav-link">Committees</a></li>
+          <li><a href="#nanku-feature" class="nav-link">Nanku Live</a></li>
+          <li><a href="#passes" class="nav-link">Passes</a></li>
+          <li><a href="#partners" class="nav-link">Partners</a></li>
+          <li>
+            <a href="#passes" class="nav-cta-btn trigger-register-modal" data-pass="All-Access Pass">
+              Claim My Spot →
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 10.5 Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Neon Ambient Backlight -->
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <!-- Milestone Pill Badge -->
+        <div class="hero-pill-badge">
+          <span>⚡ FOR THE FIRST TIME IN CHHATTISGARH • NOV 21-22, RAIPUR</span>
+        </div>
+
+        <!-- Headline & Subheadline from DESIGN.md Section 13.1 -->
+        <h1 class="hero-headline">NANKU LIVE @ ACCORD</h1>
+        <p class="hero-subheadline">Where Youth Voice Meets Governance</p>
+
+        <!-- NANKU PORTRAIT WITH LANDING FADE-IN ENTRANCE -->
+        <div class="nanku-hero-card-wrapper">
+          <!-- Floating Stars -->
+          <span class="floating-star star-top-left" aria-hidden="true">★</span>
+          <span class="floating-star star-bottom-right" aria-hidden="true">✦</span>
+
+          <!-- Floating Badge -->
+          <div class="floating-badge">
+            HEADLINER ARTIST • EXCLUSIVE SET
+          </div>
+
+          <!-- Photo Container -->
+          <div class="nanku-hero-photo-box">
+            <img
+              src="assets/nanku.jpeg"
+              alt="Nanku performing live at Accord Youth Assembly"
+              class="nanku-fade-in-image"
+              fetchpriority="high"
+              decoding="async"
+              width="900"
+              height="720"
+            >
+          </div>
+        </div>
+
+        <p class="hero-description">
+          Raipur’s most electrifying summit uniting youth parliamentarians, digital creators, and global policymakers, capped off with a historic live concert by indie trailblazer <strong>NANKU</strong>.
+        </p>
+
+        <!-- Dual CTA Group from DESIGN.md Section 10.5 -->
+        <div class="hero-cta-group">
+          <a href="#passes" class="btn btn-primary trigger-register-modal" data-pass="All-Access Pass">
+            Claim My Spot ★
+          </a>
+          <a href="#nanku-feature" class="btn btn-secondary">
+            Hear Nanku Live 📢
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13.1 Milestone & Live Countdown Section -->
+    <section class="milestone-section">
+      <div class="container countdown-bar-container">
+        <!-- Milestone Info -->
+        <div class="milestone-info">
+          <span class="milestone-badge">✨ MILESTONE REACHED</span>
+          <h2 class="milestone-title">60+ REGISTRATIONS COMPLETED</h2>
+          <p style="color: var(--color-text-secondary); font-size: 0.95rem;">
+            Phase 1 is filling fast. Secure your committee allocations and concert wristband today.
+          </p>
+          <div class="progress-track" title="82% Capacity Filled">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Live Countdown Cards -->
+        <div class="countdown-timer-box">
+          <div class="timer-card">
+            <div class="timer-num" id="days">48</div>
+            <div class="timer-lbl">Days</div>
+          </div>
+          <div class="timer-card">
+            <div class="timer-num" id="hours">14</div>
+            <div class="timer-lbl">Hours</div>
+          </div>
+          <div class="timer-card">
+            <div class="timer-num" id="minutes">22</div>
+            <div class="timer-lbl">Mins</div>
+          </div>
+          <div class="timer-card">
+            <div class="timer-num" id="seconds">50</div>
+            <div class="timer-lbl">Secs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13.2 Committees Section -->
+    <section class="section" id="committees">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-label">★ DIPLOMACY &amp; CREATOR SIMULATIONS</span>
+          <h2 class="section-title">Committees &amp; Agendas</h2>
+          <p class="section-subtitle">
+            6 specialized assembly councils tailored for debate, investigative media, civic innovation, and the digital economy.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="committee-filters">
+          <button class="filter-btn active" data-filter="all">All Councils</button>
+          <button class="filter-btn" data-filter="governance">National &amp; Civic</button>
+          <button class="filter-btn" data-filter="global">Global Security</button>
+          <button class="filter-btn" data-filter="creator">Creators &amp; Media</button>
+        </div>
+
+        <!-- Committees Grid (3-column desktop) -->
+        <div class="committees-grid">
+          <!-- Card 1: UNSC -->
+          <div class="committee-card collage-rotate-1" data-category="global">
+            <div>
+              <div class="card-top-tag">GLOBAL DIPLOMACY // COUNCIL 01</div>
+              <div class="card-acronym">UNSC</div>
+              <div class="card-fullname">United Nations Security Council</div>
+              <p class="card-description">
+                High-level crisis deliberation addressing regional sovereignty conflicts, maritime neutrality, and modern cyber-warfare boundaries.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-status-success);">● SEATS OPEN</span>
+              <button class="agenda-link" data-committee="unsc">View Agenda →</button>
+            </div>
+          </div>
+
+          <!-- Card 2: NCW -->
+          <div class="committee-card collage-rotate-2" data-category="governance">
+            <div>
+              <div class="card-top-tag">RIGHTS &amp; ADVOCACY // COUNCIL 02</div>
+              <div class="card-acronym">NCW</div>
+              <div class="card-fullname">National Commission for Women</div>
+              <p class="card-description">
+                The flagship forum where gender rights take center stage—evaluating legislative reform for digital safety and economic empowerment.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-status-success);">● SEATS OPEN</span>
+              <button class="agenda-link" data-committee="ncw">View Agenda →</button>
+            </div>
+          </div>
+
+          <!-- Card 3: Lok Sabha -->
+          <div class="committee-card collage-rotate-3" data-category="governance">
+            <div>
+              <div class="card-top-tag">PARLIAMENTARY // COUNCIL 03</div>
+              <div class="card-acronym">LOK SABHA</div>
+              <div class="card-fullname">Indian Youth Parliament</div>
+              <p class="card-description">
+                Heated debate on the national floor covering education equity, AI legislation, startup subsidies, and public governance bills.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent-pink);">● ALMOST FULL</span>
+              <button class="agenda-link" data-committee="loksabha">View Agenda →</button>
+            </div>
+          </div>
+
+          <!-- Card 4: AIIM -->
+          <div class="committee-card collage-rotate-1" data-category="creator">
+            <div>
+              <div class="card-top-tag">DIGITAL SUMMIT // COUNCIL 04</div>
+              <div class="card-acronym">AIIM</div>
+              <div class="card-fullname">All India Influencers Meet</div>
+              <p class="card-description">
+                Uniting India’s vanguard of content creators, viral storytellers, and brand architects to establish ethical guidelines in the creator economy.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-status-success);">● SEATS OPEN</span>
+              <button class="agenda-link" data-committee="aiim">View Agenda →</button>
+            </div>
+          </div>
+
+          <!-- Card 5: IP -->
+          <div class="committee-card collage-rotate-2" data-category="creator">
+            <div>
+              <div class="card-top-tag">INVESTIGATIVE // COUNCIL 05</div>
+              <div class="card-acronym">IP</div>
+              <div class="card-fullname">International Press &amp; Media</div>
+              <p class="card-description">
+                The fourth pillar of democracy: investigative reporting, press conferences, photojournalism, and delegate cross-examinations.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-status-success);">● SEATS OPEN</span>
+              <button class="agenda-link" data-committee="ip">View Agenda →</button>
+            </div>
+          </div>
+
+          <!-- Card 6: RMC -->
+          <div class="committee-card collage-rotate-3" data-category="governance">
+            <div>
+              <div class="card-top-tag">URBAN CIVIC // COUNCIL 06</div>
+              <div class="card-acronym">RMC</div>
+              <div class="card-fullname">Raipur Municipal Corporation</div>
+              <p class="card-description">
+                Crafting actionable frameworks for green urban planning, clean transit corridors, waste management, and youth civic participation in Raipur.
+              </p>
+            </div>
+            <div class="card-action-bar">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-status-success);">● SEATS OPEN</span>
+              <button class="agenda-link" data-committee="rmc">View Agenda →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13.3 Nanku Artist Feature & Music Player Section -->
+    <section class="section artist-feature-section" id="nanku-feature">
+      <div class="container">
+        <div class="artist-split-grid">
+          <!-- Visual Column -->
+          <div class="artist-visual-wrap">
+            <div class="artist-frame">
+              <img
+                src="assets/nanku.jpeg"
+                alt="Nanku Headliner Portrait"
+                loading="lazy"
+                width="700"
+                height="560"
+              >
+              <div class="artist-badge-tag">EXCLUSIVE IN RAIPUR!</div>
+            </div>
+          </div>
+
+          <!-- Bio & Interactive Music Player Column -->
+          <div class="artist-info-wrap">
+            <span class="artist-subtitle">★ THE VOICE OF NEW INDIE</span>
+            <h2 class="artist-name">NANKU LIVE</h2>
+            <p class="artist-bio">
+              Formerly known as Udbhav, <strong>Nanku</strong> has redefined Hindi indie-pop with iconic tracks like <em>Kaafizyada</em>, <em>Faasle</em>, and <em>Karun Main Kya</em>. Known for his raw emotive lyricism and boundary-pushing production, Nanku brings his full band to headline Accord Youth Assembly 2026.
+            </p>
+
+            <!-- Stats Grid -->
+            <div class="artist-stats-grid">
+              <div class="stat-item">
+                <div class="stat-val">50M+</div>
+                <div class="stat-lbl">Global Streams</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val">1M+</div>
+                <div class="stat-lbl">Monthly Listeners</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val">NOV 21</div>
+                <div class="stat-lbl">Concert Night</div>
+              </div>
+            </div>
+
+            <!-- Nanku Music Player Widget -->
+            <div class="nanku-player-box">
+              <div class="player-header">
+                <span class="now-playing-tag">NOW PLAYING: ACCORD PREVIEW</span>
+                <!-- Animated Sound Waves -->
+                <div class="audio-waves" aria-label="Equalizer Visualizer">
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                  <div class="audio-bar"></div>
+                </div>
+              </div>
+
+              <div class="track-display">
+                <div class="track-title" id="currentTrackTitle">Kaafizyada</div>
+                <div class="track-artist">Nanku • Headline Showcase</div>
+              </div>
+
+              <div class="player-controls">
+                <button class="ctrl-btn" id="prevTrackBtn" title="Previous Track">⏮</button>
+                <button class="ctrl-btn play-pause-btn" id="playPauseBtn" title="Play / Pause">▶</button>
+                <button class="ctrl-btn" id="nextTrackBtn" title="Next Track">⏭</button>
+
+                <div class="progress-container" style="flex: 1;">
+                  <div class="player-progress-bar">
+                    <div class="progress-active" id="progressActive"></div>
+                  </div>
+                  <span class="time-stamp" id="currentTime">1:12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13.4 Passes & Registration Flow Section -->
+    <section class="section" id="passes">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-label">★ TICKET-STYLE REGISTRATION</span>
+          <h2 class="section-title">Claim Your Pass</h2>
+          <p class="section-subtitle">
+            Choose your tier. Every delegate pass includes food, kit, certificates, and access to all summit proceedings.
+          </p>
+        </div>
+
+        <div class="tickets-grid">
+          <!-- Pass 1: Student Delegate -->
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <div class="ticket-type">Student Delegate</div>
+              <div class="ticket-price">₹1,499 <span>/ Entry</span></div>
+            </div>
+            <div class="ticket-body">
+              <ul class="ticket-features">
+                <li>Access to 1 Committee Council</li>
+                <li>Official Delegate Kit &amp; Badges</li>
+                <li>2-Day Lunch &amp; High Tea</li>
+                <li>Verified Participation Certificate</li>
+                <li>General Concert Night Entry</li>
+              </ul>
+            </div>
+            <div class="ticket-footer">
+              <button class="btn btn-secondary trigger-register-modal" data-pass="Student Delegate Pass" style="width: 100%;">
+                Select Pass →
+              </button>
+            </div>
+          </div>
+
+          <!-- Pass 2: All-Access VIP (Featured) -->
+          <div class="ticket-card featured">
+            <div class="popular-badge">★ MOST POPULAR</div>
+            <div class="ticket-header">
+              <div class="ticket-type">All-Access + Nanku VIP</div>
+              <div class="ticket-price">₹2,499 <span>/ Entry</span></div>
+            </div>
+            <div class="ticket-body">
+              <ul class="ticket-features">
+                <li>Full 2-Day Committee Deliberation</li>
+                <li>Priority Committee Country Allocations</li>
+                <li>VIP Front-Row Zone at Nanku Concert</li>
+                <li>Exclusive Afterparty &amp; Creator Mixer</li>
+                <li>Executive Certificate &amp; Accord Merch</li>
+              </ul>
+            </div>
+            <div class="ticket-footer">
+              <button class="btn btn-primary trigger-register-modal" data-pass="All-Access + Nanku VIP" style="width: 100%;">
+                Claim VIP Pass ★
+              </button>
+            </div>
+          </div>
+
+          <!-- Pass 3: Concert Only Fan Pass -->
+          <div class="ticket-card">
+            <div class="ticket-header">
+              <div class="ticket-type">Nanku Concert Only</div>
+              <div class="ticket-price">₹999 <span>/ Entry</span></div>
+            </div>
+            <div class="ticket-body">
+              <ul class="ticket-features">
+                <li>Concert Night Entry (Nov 21, 6:00 PM)</li>
+                <li>Live Performance by Nanku &amp; Band</li>
+                <li>Access to Food &amp; Beverage Stalls</li>
+                <li>Festive Cultural Stage Access</li>
+              </ul>
+            </div>
+            <div class="ticket-footer">
+              <button class="btn btn-secondary trigger-register-modal" data-pass="Concert Only Pass" style="width: 100%;">
+                Select Pass →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners / Municipal Corporation Section -->
+    <section class="partners-section" id="partners">
+      <div class="container">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-accent-pink);">
+          PRODUCTION &amp; INSTITUTIONAL PARTNERS
+        </span>
+        <div class="partners-logos">
+          <div class="partner-item">Raipur Municipal Corp</div>
+          <div class="partner-item">PB Party Bashers</div>
+          <div class="partner-item">HYPN Stuff</div>
+          <div class="partner-item">Chhattisgarh Youth Org</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ACCORD YOUTH ASSEMBLY</h3>
+          <p style="color: var(--color-text-muted); max-width: 400px; margin-bottom: 1rem;">
+            Where Youth Voice Meets Governance. A platform designed to empower the upcoming generation through active civic engagement, diplomacy, and music.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-accent-yellow);">
+            📍 Raipur, Chhattisgarh • November 21st &amp; 22nd, 2026
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Navigation</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#committees">Committees &amp; Agendas</a></li>
+            <li><a href="#nanku-feature">Nanku Concert</a></li>
+            <li><a href="#passes">Ticket Passes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Social &amp; Contact</h4>
+          <ul>
+            <li><a href="https://instagram.com/accordyouthassembly" target="_blank">Instagram (@accordyouthassembly)</a></li>
+            <li><a href="mailto:info@accordyouthassembly.com">info@accordyouthassembly.com</a></li>
+            <li><a href="#">Press Kit &amp; Media Rules</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Accord Youth Assembly. All Rights Reserved. Built strictly following DESIGN.md specification.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: Committee Agenda Details -->
+  <div class="modal-overlay" id="agendaModal" role="dialog" aria-modal="true" aria-labelledby="modalCommitteeTitle">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeAgendaBtn" aria-label="Close Modal">✕</button>
+      <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent-pink); margin-bottom: 8px;">
+        COUNCIL STUDY GUIDE &amp; AGENDA
+      </div>
+      <h3 id="modalCommitteeTitle" style="font-family: var(--font-display); font-size: 2.2rem; color: var(--color-accent-yellow); margin-bottom: 1rem;">
+        Committee Title
+      </h3>
+      <div style="background: rgba(255, 255, 255, 0.05); padding: 12px; border-left: 4px solid var(--color-accent-pink); margin-bottom: 1.5rem;">
+        <strong style="color: #fff; font-size: 0.9rem;">Core Theme: </strong>
+        <span id="modalCommitteeTheme" style="color: var(--color-text-secondary);">Theme description</span>
+      </div>
+      <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: #fff; margin-bottom: 8px;">Official Mandate</h4>
+      <p id="modalCommitteeAgenda" style="color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+        Agenda details...
+      </p>
+      <button class="btn btn-primary trigger-register-modal" data-pass="Student Delegate Pass" style="width: 100%;">
+        Register as Delegate for this Council →
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL: Pass Registration Form -->
+  <div class="modal-overlay" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="regModalTitle">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeRegisterBtn" aria-label="Close Modal">✕</button>
+      <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent-yellow); margin-bottom: 6px;">
+        ★ STEP 1 OF 2: PASS RESERVATION
+      </div>
+      <h3 id="regModalTitle" style="font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 1.5rem;">
+        ACCORD YOUTH ASSEMBLY 2026
+      </h3>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <label class="form-label" for="regPassType">Selected Pass Tier</label>
+          <select id="regPassType" class="form-select">
+            <option value="Student Delegate Pass">Student Delegate Pass (₹1,499)</option>
+            <option value="All-Access + Nanku VIP" selected>All-Access + Nanku VIP (₹2,499)</option>
+            <option value="Concert Only Pass">Nanku Concert Only Pass (₹999)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Legal Name</label>
+          <input type="text" id="regName" class="form-input" placeholder="e.g. Aryan Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address (for Ticket QR)</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="aryan@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regPhone">WhatsApp Number</label>
+          <input type="tel" id="regPhone" class="form-input" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="regPrefCouncil">Preferred Council / Track</label>
+          <select id="regPrefCouncil" class="form-select">
+            <option value="UNSC">UNSC (United Nations Security Council)</option>
+            <option value="NCW">NCW (National Commission for Women)</option>
+            <option value="Lok Sabha">Lok Sabha (Indian Youth Parliament)</option>
+            <option value="AIIM">AIIM (All India Influencers Meet)</option>
+            <option value="IP">IP (International Press &amp; Photojournalism)</option>
+            <option value="RMC">RMC (Raipur Municipal Corporation)</option>
+            <option value="None">None (Attending Concert Only)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          Confirm Spot &amp; Proceed to Payment →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
